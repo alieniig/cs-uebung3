@@ -14,11 +14,9 @@ public class TestOnlineSQLDB {
             String password = "bdIfjnDgeA";
             connection = DriverManager.getConnection(url, user, password);
             Statement stmt = connection.createStatement();
-           
 
             // Fahrzeug 2
-            stmt.executeUpdate("INSERT INTO Fahrzeuge VALUES ('BMW', 'X7', 220)");
-
+            stmt.executeUpdate("INSERT INTO Fahrzeuge VALUES ('Audi', 'Q7', 200)");
 
             ResultSet rs = stmt.executeQuery("SELECT * FROM Fahrzeuge");
             while (rs.next()) {
@@ -29,7 +27,7 @@ public class TestOnlineSQLDB {
             connection.close();
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
     }
