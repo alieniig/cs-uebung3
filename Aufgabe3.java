@@ -16,7 +16,6 @@ public class Aufgabe3 {
 
             connection = DriverManager.getConnection(url, user, password); // Instanz des JDBC-Treibers
             
-
             // Vorkompilierte Abfrageanweisung erstellen
             String selectSql = "SELECT * FROM Fahrzeuge WHERE Hersteller = ?";
             PreparedStatement selectStmt = connection.prepareStatement(selectSql);
