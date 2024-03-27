@@ -1,0 +1,8 @@
+Fragen:
+Vorstellung Projekt Aktienverwaltung --> geeigneet?
+
+Mapping Variante OR Mapper --> Hibernate durchaus
+
+Analyse, Konzept, Durchstich --> Anforderungsanalyse, Datenbankentwurf und Implementierung
+
+testweise Darstellung der Anwendung
