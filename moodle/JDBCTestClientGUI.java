@@ -1,3 +1,4 @@
+package moodle;
 // Einfaches Beispiel mit Ausgabe in einem Editor
 // Schalter und ComboBox vereinfachen die Aktionen
 
@@ -14,7 +15,7 @@ import java.sql.*;
 // schalter
 import java.awt.event.*;
 
-public class JDBCTestClient2 extends JFrame {
+public class JDBCTestClientGUI extends JFrame {
 
 	JToolBar toolbar = new JToolBar();
 	JTextArea editor = new JTextArea("");
@@ -25,7 +26,7 @@ public class JDBCTestClient2 extends JFrame {
 	JComboBox TSql;
 
 	/** Creates a new instance of Main */
-	public JDBCTestClient2() {
+	public JDBCTestClientGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(900, 400);
 		setGUI();
@@ -110,7 +111,7 @@ public class JDBCTestClient2 extends JFrame {
 		editor.setText("");
 		try {
 
-			// Treiber INIT, Verbinden und SQL-Statement auslösen
+			// Treiber INIT, Verbinden und SQL-Statement auslï¿½sen
 			// Returns the Class object associated with the class or interface
 			// with the given string name.
 			// class c = Class.forName( sDbDrv );
@@ -150,7 +151,7 @@ public class JDBCTestClient2 extends JFrame {
 			s = s + "+\n";
 			editor.append(s);
 
-			// Schleife über alle Tupel
+			// Schleife ï¿½ber alle Tupel
 			while (rs.next()) {
 				s = "";
 				for (i = 1; i <= AnzCols; i++) { // Attention: first column with
@@ -204,7 +205,7 @@ public class JDBCTestClient2 extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		JDBCTestClient2 frame = new JDBCTestClient2();
+		JDBCTestClientGUI frame = new JDBCTestClientGUI();
 		frame.setVisible(true);
 	}
 

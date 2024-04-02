@@ -6,14 +6,14 @@ public class Aufgabe3 {
         String url = "jdbc:mysql://sql11.freesqldatabase.com:3306/sql11693896";
         String user = "sql11693896";
         String password = "bdIfjnDgeA";
-        
+
         try {
 
             Connection connection = DriverManager.getConnection(url, user, password);
-            //prepared Statment
+            // prepared Statment
             updatePreisProTag(connection, 200, "Audi");
 
-            //Vergleich prep statement und ohne prep statement
+            // Vergleich prep statement und ohne prep statement
             System.out.println("INSERT INTO -------------------");
             insertWithoutPreparedStatements(connection, "X1", "BMW", 100);
             insertWithPreparedStatements(connection, "X2", "BMW", 100);
@@ -24,10 +24,10 @@ public class Aufgabe3 {
             deleteWithoutPreparedStatements(connection, "BMW", "X1");
             deleteWithPreparedStatements(connection, "BMW", "X2");
 
-            //methode aus der vorlesung
+            // methode aus der vorlesung
             countRecords();
-            
-            //verbindung schließen
+
+            // verbindung schließen
             connection.close();
 
         } catch (SQLException e) {
@@ -53,7 +53,9 @@ public class Aufgabe3 {
             pstmt.close();
         }
     }
-    public static void updatePreisProTag(Connection connection, int preisProTag, String hersteller) throws SQLException {
+
+    public static void updatePreisProTag(Connection connection, int preisProTag, String hersteller)
+            throws SQLException {
         String updateSql = "UPDATE Fahrzeuge SET `Preis pro Tag` = ? WHERE Hersteller = ?";
         PreparedStatement updateStmt = connection.prepareStatement(updateSql);
         updateStmt.setInt(1, preisProTag); // Preis pro Tag setzen
@@ -114,16 +116,19 @@ public class Aufgabe3 {
         System.out.println("Zeit mit Prepared Statements: " + (endTime - startTime) + "ms");
     }
 
-    public static void deleteWithoutPreparedStatements(Connection connection, String hersteller, String modell) throws SQLException {
+    public static void deleteWithoutPreparedStatements(Connection connection, String hersteller, String modell)
+            throws SQLException {
         long startTime = System.currentTimeMillis();
         Statement stmt = connection.createStatement();
-        int rowsAffected = stmt.executeUpdate("DELETE FROM Fahrzeuge WHERE Hersteller = '" + hersteller + "' AND Modell = '" + modell + "'");
+        int rowsAffected = stmt.executeUpdate(
+                "DELETE FROM Fahrzeuge WHERE Hersteller = '" + hersteller + "' AND Modell = '" + modell + "'");
         System.out.println("Gelöschte Zeilen: " + rowsAffected);
         long endTime = System.currentTimeMillis();
         System.out.println("Zeit ohne Prepared Statements: " + (endTime - startTime) + "ms");
     }
-    
-    public static void deleteWithPreparedStatements(Connection connection, String hersteller, String modell) throws SQLException {
+
+    public static void deleteWithPreparedStatements(Connection connection, String hersteller, String modell)
+            throws SQLException {
         long startTime = System.currentTimeMillis();
         String deleteSql = "DELETE FROM Fahrzeuge WHERE Hersteller = ? AND Modell = ?";
         PreparedStatement deleteStmt = connection.prepareStatement(deleteSql);

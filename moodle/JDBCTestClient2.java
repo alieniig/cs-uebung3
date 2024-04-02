@@ -1,3 +1,4 @@
+package moodle;
 // Einfaches Beispiel mit Ausgabe in einem Editor
 // Schalter und ComboBox vereinfachen die Aktionen
 
@@ -14,7 +15,7 @@ import java.sql.*;
 // schalter
 import java.awt.event.*;
 
-public class JDBCTestClientGUI extends JFrame {
+public class JDBCTestClient2 extends JFrame {
 
 	JToolBar toolbar = new JToolBar();
 	JTextArea editor = new JTextArea("");
@@ -25,7 +26,7 @@ public class JDBCTestClientGUI extends JFrame {
 	JComboBox TSql;
 
 	/** Creates a new instance of Main */
-	public JDBCTestClientGUI() {
+	public JDBCTestClient2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(900, 400);
 		setGUI();
@@ -204,7 +205,7 @@ public class JDBCTestClientGUI extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		JDBCTestClientGUI frame = new JDBCTestClientGUI();
+		JDBCTestClient2 frame = new JDBCTestClient2();
 		frame.setVisible(true);
 	}
 

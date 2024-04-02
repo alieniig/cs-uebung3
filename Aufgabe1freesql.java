@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class TestOnlineSQLDB {
+public class Aufgabe1freesql {
     public static void main(String[] args) {
         // JDBC-Verbindungsparameter
 

@@ -1,8 +1,9 @@
+package moodle;
 import java.sql.*;
 
 public class JDBCTestClient {
 
-	// A. Schmietendorf – HWR Berlin - SoSe2020
+	// A. Schmietendorf ï¿½ HWR Berlin - SoSe2020
 	// JDBC-Testbeispiel - Vorlesung Programmierung C/S-Systeme
 	// Achtung der Client setzt ein laufende RDBMS Firebird voraus
 	// ebenso die Nutzung der Beispieldatenbank "employee.fdb"
@@ -22,7 +23,7 @@ public class JDBCTestClient {
 
 		String sDBDriver = "org.firebirdsql.jdbc.FBDriver";
 		
-		//Achtung: Details für neuere Versionen siehe im Handbuch unter folgender URL:
+		//Achtung: Details fï¿½r neuere Versionen siehe im Handbuch unter folgender URL:
 		//https://firebirdsql.github.io/jaybird-manual/jaybird_manual.html#connection-drivermanager
 		
 		String sDBUrl = "jdbc:firebirdsql:localhost/3050:" +
@@ -42,7 +43,7 @@ public class JDBCTestClient {
 
 			stm = con.createStatement();
 			
-			//Achtung nach dem ersten Eintrag kommt es zur Primärschlüsselverletzung
+			//Achtung nach dem ersten Eintrag kommt es zur Primï¿½rschlï¿½sselverletzung
 			stm.executeUpdate("INSERT INTO COUNTRY VALUES ('Frankreich','Euro')");
 
 			System.out.println("Daten erfolgreich in die DB eingetragen");

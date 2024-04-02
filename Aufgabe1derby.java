@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Aufgabe1 {
+public class Aufgabe1derby {
     public static void main(String[] args) {
 
         String url = "jdbc:derby://localhost:1527/database-test;create=true";
