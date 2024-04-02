@@ -4,16 +4,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Derby {
+public class Aufgabe1 {
     public static void main(String[] args) {
 
         String url = "jdbc:derby://localhost:1527/database-test;create=true";
+        // Verbindung zur Datenbank erstellen
         try (Connection conn = DriverManager.getConnection(url);
                 Statement stmt = conn.createStatement()) {
-            //stmt.executeUpdate("Delete FROM Fahrzeuge WHERE ID = 6");
+            //SQL-Statement zum Erstellen der Tabelle
+            //stmt.executeUpdate("CREATE TABLE Fahrzeuge (ID INT PRIMARY KEY, Hersteller VARCHAR(255), Modell VARCHAR(255))");        
+            
+            stmt.executeUpdate("Delete FROM Fahrzeuge WHERE ID = 6");
 
+            //SQL-Statement zum Einfügen von Datensätzen
             stmt.executeUpdate("INSERT INTO Fahrzeuge  VALUES (6, 'Porsche', '911')");
+            stmt.executeUpdate("INSERT INTO Fahrzeuge  VALUES (7, 'Audi', 'Q7')");
 
+            //Rückgabewerte ausgeben
             ResultSet rs = stmt.executeQuery("SELECT * FROM Fahrzeuge");
             while (rs.next()) {
                 System.out.println(rs.getInt("ID") + " " + rs.getString("Hersteller") + " " + rs.getString("Modell"));
@@ -32,4 +39,5 @@ public class Derby {
         }
 
     }
+
 }

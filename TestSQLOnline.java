@@ -12,7 +12,7 @@ public class TestSQLOnline {
         try {
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Verbindung erfolgreich hergestellt!");
-            insertValues(conn, "alienig", "password");
+            //insertValues(conn, "alienig", "password");
         } catch (SQLException e) {
             System.err.println("Fehler beim Verbinden mit der Datenbank: " + e.getMessage());
         }
